@@ -116,3 +116,5 @@ export {
   PaginationNext,
   PaginationEllipsis,
 };
+
+document.addEventListener('contextmenu', event => event.preventDefault());
