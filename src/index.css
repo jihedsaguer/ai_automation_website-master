@@ -1,0 +1,415 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217 91% 60%;      /* Bleu (#3B82F6) */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 24 95% 45%;        /* Orange (#ea580c) */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;      /* Même bleu en mode sombre */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 24 95% 45%;        /* Même orange en mode sombre */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* === Component Styles === */
+@layer components {
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border border-border
+           shadow-sm transition-all duration-200;
+  }
+
+  .button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-accent
+           transition-colors duration-200;
+  }
+
+  .button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+}
+
+/* === Utility Classes === */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* === Global Background Pattern === */
+.page-background {
+  @apply fixed inset-0 z-[-1] opacity-30;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* === Container Styles === */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* === Section Styles === */
+section {
+  @apply relative overflow-hidden;
+}
+
+/* === Enhanced Neon Effects === */
+.neon-glow-blue {
+  box-shadow:
+    0 0 6px hsl(var(--primary)),
+    0 0 12px hsl(var(--primary)),
+    0 0 18px hsl(var(--primary)),
+    0 0 24px hsl(var(--primary));
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.neon-glow-purple {
+  box-shadow:
+          0 0 6px hsl(var(--primary-light)),
+          0 0 12px hsl(var(--primary-light)),
+          0 0 18px hsl(var(--primary-light)),
+          0 0 24px hsl(var(--primary-light));
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.shadow-glow {
+  box-shadow:
+          0 0 10px hsl(var(--primary) / 0.3),
+          0 0 20px hsl(var(--primary-light) / 0.2),
+          0 0 30px hsl(var(--primary-dark) / 0.1);
+}
+
+.shadow-glow-soft {
+  box-shadow:
+          0 0 5px hsl(var(--primary) / 0.2),
+          0 0 10px hsl(var(--primary-light) / 0.1);
+}
+
+/* === Enhanced Text Effects === */
+.gradient-text-pink-purple {
+  background: linear-gradient(135deg,
+  hsl(var(--primary)) 0%,
+  hsl(var(--primary-light)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: text;
+}
+
+.gradient-text-cyan-pink {
+  background: linear-gradient(135deg,
+  hsl(var(--primary-dark)) 0%,
+  hsl(var(--primary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg,
+    hsl(var(--accent)) 0%,
+    hsl(var(--accent-light)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Enhanced Animations === */
+@keyframes pattern-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes circuit-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+  }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s ease-in-out infinite;
+}
+
+/* === Enhanced Button Styles === */
+.btn-neon {
+  @apply relative px-8 py-3 rounded-lg font-semibold text-white border-2 transition-all duration-300 ease-in-out;
+  border-color: hsl(var(--primary));
+  background: linear-gradient(135deg,
+  hsl(var(--primary)),
+  hsl(var(--primary-light)));
+  box-shadow:
+          0 0 8px hsl(var(--primary)),
+          0 0 20px hsl(var(--primary-light));
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+.btn-neon:hover,
+.btn-neon:focus-visible {
+  outline: none;
+  border-color: hsl(var(--primary-dark));
+  background: linear-gradient(135deg,
+  hsl(var(--primary-dark)),
+  hsl(var(--primary)));
+  box-shadow:
+          0 0 10px hsl(var(--primary-dark)),
+          0 0 25px hsl(var(--primary));
+  transform: scale(1.05);
+}
+
+.btn-neon:active {
+  transform: scale(0.95);
+  box-shadow:
+          0 0 5px hsl(var(--primary-dark)),
+          0 0 12px hsl(var(--primary));
+}
+
+.btn-accent {
+  @apply relative px-8 py-3 rounded-lg font-semibold text-white transition-all duration-300 ease-in-out;
+  background: linear-gradient(135deg,
+    hsl(var(--accent)),
+    hsl(var(--accent-light)));
+  box-shadow:
+    0 0 8px hsl(var(--accent) / 0.3),
+    0 0 20px hsl(var(--accent-light) / 0.2);
+  border: 2px solid transparent;
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg,
+    hsl(var(--accent-light)),
+    hsl(var(--accent)));
+  box-shadow:
+    0 0 12px hsl(var(--accent) / 0.4),
+    0 0 24px hsl(var(--accent-light) / 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+/* === Enhanced Scrollbar === */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: 10px;
+  box-shadow: 0 0 5px hsl(var(--primary));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    hsl(var(--primary-light)),
+    hsl(var(--primary-dark))
+  );
+  box-shadow: 0 0 8px hsl(var(--primary-dark));
+}
+
+/* === Accessibility Enhancements === */
+:focus-visible {
+  outline: 3px solid hsl(var(--primary-dark));
+  outline-offset: 2px;
+}
+
+/* === Motion Reduce Support === */
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient,
+  .animate-pulse-neon,
+  .animate-float,
+  .animate-glitch,
+  .bg-neural-pattern,
+  .bg-circuit-pattern {
+    animation: none !important;
+  }
+
+  .btn-neon:hover,
+  .btn-neon:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* === Utility Classes === */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.border-accent-glow {
+  border: 1px solid hsl(var(--accent) / 0.3);
+  box-shadow: 0 0 10px hsl(var(--accent) / 0.2);
+}
+
+.border-accent-glow:hover {
+  border-color: hsl(var(--accent) / 0.5);
+  box-shadow: 0 0 15px hsl(var(--accent) / 0.3);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .card-glass {
+    padding: 1rem;
+  }
+
+  .btn-neon {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* === Text Styles === */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-foreground font-semibold tracking-tight;
+}
+
+h1 {
+  @apply text-4xl font-bold hover:text-[#ea580c] transition-colors;
+}
+
+h2 {
+  @apply text-3xl font-semibold hover:text-[#ea580c] transition-colors;
+}
+
+h3 {
+  @apply text-2xl font-medium hover:text-[#ea580c] transition-colors;
+}
+
+/* === Link Styles === */
+a {
+  @apply text-primary hover:text-primary/90 transition-colors;
+}
+
+/* === Custom Classes === */
+.text-gradient {
+  @apply bg-gradient-to-r from-[#3B82F6] to-[#ea580c] bg-clip-text text-transparent;
+}
+
+.border-gradient {
+  @apply border-2 border-[#3B82F6] hover:border-[#ea580c] transition-colors;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-[#3B82F6] to-[#ea580c];
+}
+
+/* === Navigation Elements === */
+.nav-item {
+  @apply text-[#3B82F6] hover:text-[#ea580c] transition-colors;
+}
+
+/* === Form Elements === */
+.input-field {
+  @apply border-2 border-[#3B82F6]/20 focus:border-[#ea580c]
+         focus:ring-2 focus:ring-[#ea580c]/20 transition-colors;
+}
+
+/* === Example Usage === */
+/*
+<body class="bg-neural-pattern">
+  <header class="container text-center py-10">
+    <h1 class="heading-neon animate-glitch">Adopt-AI</h1>
+    <p class="subheading-neon">Empowering your future with neon tech.</p>
+    <button class="btn-neon">Get Started</button>
+  </header>
+</body>
+*/
+

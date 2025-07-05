@@ -1,0 +1,54 @@
+{
+  "company": {
+    "name": "NLS Consulting",
+    "description": "Cabinet de conseil spécialisé en Intelligence Artificielle",
+    "founded": "2024",
+    "location": {
+      "address": "Votre adresse",
+      "city": "Votre ville",
+      "country": "Votre pays"
+    },
+    "contact": {
+      "email": "contact@nlsconsulting.com",
+      "phone": "Votre téléphone",
+      "website": "www.nlsconsulting.com"
+    },
+    "services": [
+      {
+        "name": "Intelligence Artificielle",
+        "description": "Développement et intégration de solutions IA sur mesure",
+        "subServices": ["Machine Learning", "Deep Learning", "NLP"]
+      },
+      {
+        "name": "Data Science",
+        "description": "Analyse et valorisation des données",
+        "subServices": ["Analyse prédictive", "Data Mining", "Visualisation"]
+      },
+      {
+        "name": "Conseil en IA",
+        "description": "Accompagnement stratégique en transformation digitale",
+        "subServices": ["Audit IA", "Formation", "Roadmap digitale"]
+      }
+    ],
+    "expertise": [
+      "Intelligence Artificielle",
+      "Machine Learning",
+      "Traitement du Langage Naturel",
+      "Computer Vision",
+      "Big Data"
+    ],
+    "industries": [
+      "Finance",
+      "Santé",
+      "Industrie",
+      "Retail",
+      "Services"
+    ],
+    "values": [
+      "Innovation",
+      "Excellence",
+      "Éthique",
+      "Collaboration"
+    ]
+  }
+}
