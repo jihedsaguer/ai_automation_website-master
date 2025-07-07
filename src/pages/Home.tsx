@@ -6,11 +6,11 @@ import {
     Shield,
     Zap,
     Sparkles,
-    Code,
+    ScrollText,
     Bot,
-    Workflow,
+    Workflow, Code, Laptop,
 } from 'lucide-react';
-import {Button} from "../components";
+import {Button} from "@/components";
 import Chatbot from "../components/Chatbot";
 import Binary3DBackground from "../components/ui/Binary3DBackground";
 
@@ -40,12 +40,12 @@ export function Home() {
                                 Unlock new levels of productivity and innovation with our AI-driven tools
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Link to="/signup">
+                                <Link to="/Contact">
                                     <Button size="lg" className="btn-accent w-full sm:w-auto">
                                         Get Started <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
                                 </Link>
-                                <Link to="/solutions">
+                                <Link to="/Training">
                                     <Button size="lg" variant="outline" className="border-accent-glow w-full sm:w-auto hover:text-accent">
                                         Explore Solutions
                                     </Button>
@@ -170,6 +170,60 @@ export function Home() {
                                 </motion.h3>
                                 <p className="text-sm text-muted-foreground">Tailor automation to your needs</p>
                             </motion.div>
+
+                            <motion.div
+                                className="card-accent p-6 rounded-lg relative overflow-hidden"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400 }}
+                            >
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10"
+                                    animate={{
+                                        x: ["0%", "100%"],
+                                        opacity: [0.5, 0.8, 0.5]
+                                    }}
+                                    transition={{
+                                        duration: 3,
+                                        repeat: Infinity,
+                                        repeatType: "reverse"
+                                    }}
+                                />
+                                <ScrollText className="w-8 h-8 mb-4 text-accent" />
+                                <motion.h3
+                                    className="text-lg font-semibold mb-2"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    Legal & Tax Expertise
+                                </motion.h3>
+                                <p className="text-sm text-muted-foreground">Comprehensive legal and tax advisory services for businesses</p>
+                            </motion.div>
+
+                            <motion.div
+                                className="card-accent p-6 rounded-lg relative overflow-hidden"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400 }}
+                            >
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10"
+                                    animate={{
+                                        x: ["0%", "100%"],
+                                        opacity: [0.5, 0.8, 0.5]
+                                    }}
+                                    transition={{
+                                        duration: 3,
+                                        repeat: Infinity,
+                                        repeatType: "reverse"
+                                    }}
+                                />
+                                <Code className="w-8 h-8 mb-4 text-accent" />
+                                <motion.h3
+                                    className="text-lg font-semibold mb-2"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    No-Code Solutions
+                                </motion.h3>
+                                <p className="text-sm text-muted-foreground">Build powerful applications without writing code</p>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
@@ -291,14 +345,14 @@ export function Home() {
                             description: 'Lightning-fast AI processing for real-time business operations.'
                         },
                         {
-                            icon: <Code className="h-6 w-6 text-primary" />,
-                            title: 'No-Code Solutions',
-                            description: 'Build powerful applications without writing a single line of code.'
+                            icon: <ScrollText className="h-6 w-6 text-primary" />,
+                            title: 'Legal & Tax Advisory',
+                            description: 'Expert guidance on legal compliance, taxation, and business structuring for your organization.'
                         },
                         {
-                            icon: <Brain className="h-6 w-6 text-primary" />,
-                            title: 'Predictive Analytics',
-                            description: 'Make data-driven decisions with advanced predictive modeling.'
+                            icon: <Laptop className="h-6 w-6 text-primary" />,
+                            title: 'Online Training & Coaching',
+                            description: 'Specialized n8n automation training and coaching to enhance your technical capabilities.'
                         }
                     ].map((feature, index) => (
                         <motion.div
@@ -345,6 +399,81 @@ export function Home() {
                             </p>
                         </motion.div>
                     ))}
+                </div>
+            </section>
+
+            {/* Training & Certification Section */}
+            <section className="container py-16 sm:py-24 relative overflow-hidden mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12 relative z-10"
+                >
+                    <h2 className="text-3xl font-bold tracking-tight mb-4">
+                        Training & Certification Programs
+                    </h2>
+                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                        Enhance your skills with our professional training programs
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+                    {[
+                        {
+                            title: "n8n Automation Fundamentals",
+                            price: "$899",
+                            duration: "4 weeks",
+                            features: ["Live online sessions", "Hands-on projects", "Personal mentoring"]
+                        },
+                        {
+                            title: "Legal & Tax Advisory",
+                            price: "$599",
+                            duration: "1 month",
+                            features: ["Legal compliance review", "Tax optimization", "Monthly consultation"]
+                        },
+                        {
+                            title: "Business Process Automation",
+                            price: "$1,799",
+                            duration: "8 weeks",
+                            features: ["Industry certification", "Portfolio development", "Job assistance"]
+                        }
+                    ].map((program, index) => (
+                        <motion.div
+                            key={program.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="bg-card border border-primary/20 rounded-xl p-6 hover:border-primary/40 transition-all"
+                        >
+                            <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
+                            <div className="flex justify-between items-center mb-4">
+                                <span className="text-2xl font-bold text-primary">{program.price}</span>
+                                <span className="text-sm text-muted-foreground">{program.duration}</span>
+                            </div>
+                            <ul className="space-y-2 mb-6">
+                                {program.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-center gap-2">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                                        <span className="text-sm">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <Link to="/training" className="w-full">
+                                <Button className="w-full">
+                                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                                </Button>
+                            </Link>
+                        </motion.div>
+                    ))}
+                </div>
+
+                <div className="text-center">
+                    <Link to="/training">
+                        <Button variant="outline" size="lg">
+                            View All Programs <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </Link>
                 </div>
             </section>
 
@@ -455,12 +584,12 @@ export function Home() {
                         Join the future of intelligent automation and start your AI journey today.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link to="/signup">
+                        <Link to="/contact">
                             <Button size="lg" className="w-full sm:w-auto">
                                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
-                        <Link to="/solutions">
+                        <Link to="/training">
                             <Button size="lg" variant="outline" className="w-full sm:w-auto">
                                 View Solutions
                             </Button>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Sparkles, Brain, Shield, Zap, Workflow } from "lucide-react";
+import { Sparkles, Brain, Shield, ScrollText, Lock, Server, Building2, Globe2 } from "lucide-react";
 
-const About = () => {
+export const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -13,14 +13,17 @@ const About = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20 mb-4">
-              <Sparkles className="w-4 h-4" />
-              About Us
+              <Building2 className="w-4 h-4" />
+              Our Story
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-              We are <span className="text-accent">NLS Consulting</span>
+              Welcome to <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">NLS Consulting</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Specialists in intelligent automation and digital innovation, we support companies in their transformation with AI, tailor-made solutions, and cutting-edge technical expertise.
+              Founded in 2023 and headquartered in Bizerte, NLS Consulting is an emerging leader in digital transformation in Tunisia.
+              We combine local expertise with international standards to deliver innovative solutions in cybersecurity,
+              AI automation, and legal advisory. Our team of qualified Tunisian experts works at the intersection of
+              technology and law, serving clients across North Africa and Europe.
             </p>
           </motion.div>
         </div>
@@ -41,7 +44,9 @@ const About = () => {
             <Brain className="w-8 h-8 mx-auto mb-4 text-primary" />
             <h2 className="text-2xl font-semibold mb-2">Our Mission</h2>
             <p className="text-muted-foreground">
-              To provide our clients with innovative and efficient solutions to automate their tasks, improve productivity, and accelerate their digital transformation.
+              To drive digital transformation of Tunisian and international businesses through innovative solutions in
+              cybersecurity, AI automation, and legal compliance, while contributing to the growth of Tunisia's
+              technology sector.
             </p>
           </motion.div>
           <motion.div
@@ -51,10 +56,11 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-card border border-primary/20 rounded-xl p-8 text-center shadow-md"
           >
-            <Sparkles className="w-8 h-8 mx-auto mb-4 text-accent" />
+            <Globe2 className="w-8 h-8 mx-auto mb-4 text-accent" />
             <h2 className="text-2xl font-semibold mb-2">Our Vision</h2>
             <p className="text-muted-foreground">
-              To be a recognized leader in intelligent automation, guiding our clients to success through technology.
+              To become a major player in technological innovation in North Africa, establishing new standards
+              of excellence in digital security, intelligent automation, and specialized legal consulting.
             </p>
           </motion.div>
           <motion.div
@@ -66,18 +72,33 @@ const About = () => {
           >
             <Shield className="w-8 h-8 mx-auto mb-4 text-primary" />
             <h2 className="text-2xl font-semibold mb-2">Our Values</h2>
-            <ul className="list-disc list-inside text-muted-foreground text-left inline-block mx-auto">
-              <li>Innovation</li>
-              <li>Excellence</li>
-              <li>Transparency</li>
-              <li>Commitment</li>
-              <li>Collaboration</li>
+            <ul className="text-muted-foreground text-left space-y-2">
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span>Excellence & Innovation</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span>Integrity & Transparency</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span>Local Expertise & Global Standards</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span>Client Commitment & Quality</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                <span>Responsible Innovation</span>
+              </li>
             </ul>
           </motion.div>
         </div>
       </section>
 
-      {/* Expertise Section */}
+      {/* Core Services Section */}
       <section className="container py-16 sm:py-24 bg-muted/50 relative overflow-hidden mx-auto">
         <div className="absolute inset-0 bg-circuit-pattern opacity-10" />
         <motion.div
@@ -91,53 +112,109 @@ const About = () => {
             Our Expertise
           </h2>
           <p className="text-lg leading-relaxed max-w-xl mx-auto text-muted-foreground">
-            We combine artificial intelligence, automation, and innovation to deliver solutions tailored to each business.
+            An integrated approach combining cutting-edge technology and legal expertise
           </p>
         </motion.div>
+
         <div className="grid md:grid-cols-4 gap-8 items-center relative z-10 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow"
+            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow-lg"
           >
-            <Zap className="h-8 w-8 text-primary mb-3" />
-            <span className="font-semibold mb-1">Intelligent Automation</span>
-            <span className="text-muted-foreground text-sm">Business process optimization</span>
+            <Lock className="h-8 w-8 text-primary mb-3" />
+            <span className="font-semibold mb-2">Cybersecurity</span>
+            <span className="text-sm text-muted-foreground">Advanced system protection and comprehensive security auditing</span>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow"
+            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow-lg"
           >
-            <Workflow className="h-8 w-8 text-accent mb-3" />
-            <span className="font-semibold mb-1">Tailor-made Solutions</span>
-            <span className="text-muted-foreground text-sm">Custom development</span>
+            <Server className="h-8 w-8 text-primary mb-3" />
+            <span className="font-semibold mb-2">IT Infrastructure</span>
+            <span className="text-sm text-muted-foreground">Design and optimization of cloud and on-premise infrastructure</span>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow"
+            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow-lg"
           >
             <Brain className="h-8 w-8 text-primary mb-3" />
-            <span className="font-semibold mb-1">AI Expertise</span>
-            <span className="text-muted-foreground text-sm">Advanced algorithms</span>
+            <span className="font-semibold mb-2">AI Automation</span>
+            <span className="text-sm text-muted-foreground">Intelligent automation solutions with n8n and advanced AI</span>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow"
+            className="flex flex-col items-center text-center p-6 rounded-xl border border-primary/20 bg-background/50 hover:border-primary/40 shadow-lg"
           >
-            <Shield className="h-8 w-8 text-accent mb-3" />
-            <span className="font-semibold mb-1">Security & Trust</span>
-            <span className="text-muted-foreground text-sm">Data protection</span>
+            <ScrollText className="h-8 w-8 text-primary mb-3" />
+            <span className="font-semibold mb-2">Legal Advisory</span>
+            <span className="text-sm text-muted-foreground">Legal audit and technology regulatory compliance</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="container py-16 sm:py-24 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-4">Why Choose Us?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Tunisian expertise driving global innovation
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-card border border-primary/20 rounded-xl p-6"
+          >
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Local Excellence
+            </h3>
+            <p className="text-muted-foreground">
+              Based in Bizerte, we combine local expertise with international standards, delivering solutions tailored
+              to both Tunisian and international market needs.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-card border border-primary/20 rounded-xl p-6"
+          >
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <Brain className="w-5 h-5 text-primary" />
+              Integrated Innovation
+            </h3>
+            <p className="text-muted-foreground">
+              Our unique approach integrates cybersecurity, AI, and legal expertise to provide comprehensive
+              and innovative solutions to our clients.
+            </p>
           </motion.div>
         </div>
       </section>

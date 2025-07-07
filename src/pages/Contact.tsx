@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Card, CardHeader, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
-import { Button } from "../components";
+import { Button } from "@/components";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+export const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -72,6 +72,4 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;
 

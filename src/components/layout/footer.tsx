@@ -14,11 +14,6 @@ export function Footer() {
                                     About Us
                                 </Link>
                             </li>
-                            <li>
-                                <Link to="/careers" className="text-muted-foreground hover:text-foreground">
-                                    Careers
-                                </Link>
-                            </li>
                         </ul>
                     </div>
                     <div className="space-y-4">
@@ -28,6 +23,11 @@ export function Footer() {
                                 <Link to="/contact" className="text-muted-foreground hover:text-foreground">
                                     Contact Us
                                 </Link>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@nlsconsulting.online" className="text-muted-foreground hover:text-foreground">
+                                    contact@nlsconsulting.online
+                                </a>
                             </li>
                             <li>
                                 <Link to="/help" className="text-muted-foreground hover:text-foreground">
@@ -67,9 +67,10 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-                    <p>© 2024 Your Company. All rights reserved.</p>
+                    <p>© 2025 Your Company. All rights reserved.</p>
                 </div>
             </div>
         </footer>
     );
 }
+

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Card, CardHeader, CardContent } from "../components/ui/card";
 import { motion } from "framer-motion";
+import simopLogo from "../../simop.png";
+import prologicLogo from "../../prologic.png";
+import switzerlandLogo from "../../unnamed.jpg";
+import actdevLogo from "../../act-fr-tunisie.webp";
 
 const partnersData = [
   {
@@ -11,20 +15,31 @@ const partnersData = [
   },
   {
     name: "Simop Tunisie",
-    logo: "https://simop-training.com/wp-content/uploads/2021/09/cropped-logo-simop-1.png",
+    logo: simopLogo,
     review: "SIMOP Training is the first Huawei-certified training center in Tunisia, offering professional IT training with state-of-the-art facilities and certified instructors, dedicated to advancing careers through exclusive certifications and tailored sessions.",
     reviewer: "Official Company Description",
   },
   {
     name: "Prologic Tunisie",
-    logo: "https://www.prologic-solutions.com.tn/images/logo.png",
+    logo: prologicLogo,
     review: "Prologic Tunisie specializes in computer and network security, providing IT consulting and solutions to help businesses secure and optimize their digital infrastructure.",
     reviewer: "Official Company Description",
   },
-  // Add more partners here
+  {
+    name: "Switzerland Innovation",
+    logo: switzerlandLogo,
+    review: "Switzerland Innovation is the Swiss innovation park network that helps companies transform research findings into marketable products and services. We facilitate collaborations between companies and leading research institutions, fostering innovation across Switzerland.",
+    reviewer: "Official Company Description",
+  },
+  {
+    name: "ActDev",
+    logo: actdevLogo,
+    review: "ActDev est un cabinet de formation et de conseil en IT spécialisé dans l'accompagnement des entreprises dans leur transformation digitale. Nous proposons des formations personnalisées et des solutions innovantes pour optimiser les processus métier.",
+    reviewer: "Official Company Description",
+  }
 ];
 
-const Partners = () => {
+export const Partners = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
@@ -41,8 +56,14 @@ const Partners = () => {
             >
               <Card className={`transition-all duration-300 cursor-pointer border-2 ${selected === idx ? 'border-accent shadow-2xl' : 'border-primary/20 shadow-md'}`}>
                 <CardHeader className="flex flex-col items-center">
-                  <img src={partner.logo} alt={partner.name} className="h-16 mb-4 rounded-full bg-white p-2 border" />
-                  <h2 className="text-xl font-semibold mb-1 text-center">{partner.name}</h2>
+                  <div className="w-32 h-32 flex items-center justify-center p-4 bg-white rounded-lg">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h2 className="text-xl font-semibold mb-1 mt-4 text-center">{partner.name}</h2>
                 </CardHeader>
                 <CardContent className="flex flex-col items-center">
                   <p className="italic text-muted-foreground text-center mb-3">"{partner.review}"</p>
@@ -56,6 +77,4 @@ const Partners = () => {
     </div>
   );
 };
-
-export default Partners;
 

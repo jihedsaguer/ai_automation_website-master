@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Code, Zap, Shield } from 'lucide-react';
+import { Brain, ScrollText, Zap, Shield } from 'lucide-react';
 import {Card} from '../ui/card.tsx';
 
 const features = [
@@ -10,9 +10,9 @@ const features = [
     description: 'Leverage cutting-edge AI to automate complex business processes and workflows.'
   },
   {
-    icon: Code,
-    title: 'No-Code Solutions',
-    description: 'Build powerful applications without writing a single line of code.'
+    icon: ScrollText,
+    title: 'Legal & Tax Advisory',
+    description: 'Expert guidance on legal compliance, tax optimization, and business structuring in Switzerland and internationally.'
   },
   {
     icon: Zap,
@@ -72,4 +72,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features; 
+export default Features;

@@ -87,7 +87,7 @@ const teamMembers = [
  
 ];
 
-const Team: React.FC = () => {
+export const Team: React.FC = () => {
   const { theme } = useTheme();
   return (
     <div
@@ -111,4 +111,3 @@ const Team: React.FC = () => {
   );
 };
 
-export default Team;

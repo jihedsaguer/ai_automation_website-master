@@ -65,7 +65,7 @@ const services = [
     }
 ];
 
-const ServicesPage = () => {
+export const Services = () => {
     const navigate = useNavigate();
 
     return (
@@ -217,4 +217,3 @@ const ServicesPage = () => {
     );
 };
 
-export default ServicesPage;
