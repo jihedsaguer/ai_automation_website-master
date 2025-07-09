@@ -1,6 +1,7 @@
 import React from "react";
 import Binary3DBackground from "../components/ui/Binary3DBackground";
 import { useTheme } from "../components/theme-provider";
+import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/avatar";
 
 type TeamMemberCardProps = {
   name: string;
@@ -24,13 +25,11 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
       borderColor: "rgba(255,255,255,0.2)",
     }}
   >
-    <div className="relative mb-2">
-      <img
-        src={image}
-        alt={name}
-        className="w-20 h-20 rounded-full object-cover border-2"
-        style={{ borderColor: accentColor }}
-      />
+    <div className="relative mb-2 flex items-center justify-center">
+      <Avatar className="w-20 h-20 shadow-lg border-4" style={{ borderColor: accentColor }}>
+        <AvatarImage src={image} alt={name} />
+        <AvatarFallback>{name[0]}</AvatarFallback>
+      </Avatar>
       {/* Accent arc */}
       <svg
         className="absolute top-0 left-0"
@@ -54,37 +53,30 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 
 const teamMembers = [
   {
-    name: "",
-    image: "",
+    name: "Alice Smith",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alice",
     accentColor: "#2432B0",
   },
   {
-    name: "",
-    image: "",
+    name: "Bob Johnson",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Bob",
     accentColor: "#209FDF",
   },
   {
-    name: "",
-    image: "",
+    name: "Carol Lee",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Carol",
     accentColor: "#20D16B",
   },
-   {
-    name: "",
-    image: "",
+  {
+    name: "David Kim",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=David",
     accentColor: "#2432B0",
   },
   {
-    name: "",
-    image: "",
-    accentColor: "#209FDF",
-  },
-  {
-    name: "",
-    image: "",
+    name: "Frank Green",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Frank",
     accentColor: "#20D16B",
   },
- 
- 
 ];
 
 export const Team: React.FC = () => {
