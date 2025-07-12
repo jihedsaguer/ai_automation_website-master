@@ -352,7 +352,7 @@ export function Home() {
                         {
                             icon: <Laptop className="h-6 w-6 text-primary" />,
                             title: 'Online Training & Coaching',
-                            description: 'Specialized n8n automation training and coaching to enhance your technical capabilities.'
+                            description: 'Specialized  automation training and coaching to enhance your technical capabilities.'
                         }
                     ].map((feature, index) => (
                         <motion.div
@@ -421,20 +421,17 @@ export function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
                     {[
                         {
-                            title: "n8n Automation Fundamentals",
-                            price: "$899",
+                            title: " Automation Fundamentals",
                             duration: "4 weeks",
                             features: ["Live online sessions", "Hands-on projects", "Personal mentoring"]
                         },
                         {
                             title: "Legal & Tax Advisory",
-                            price: "$599",
                             duration: "1 month",
                             features: ["Legal compliance review", "Tax optimization", "Monthly consultation"]
                         },
                         {
                             title: "Business Process Automation",
-                            price: "$1,799",
                             duration: "8 weeks",
                             features: ["Industry certification", "Portfolio development", "Job assistance"]
                         }
@@ -448,7 +445,6 @@ export function Home() {
                         >
                             <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
                             <div className="flex justify-between items-center mb-4">
-                                <span className="text-2xl font-bold text-primary">{program.price}</span>
                                 <span className="text-sm text-muted-foreground">{program.duration}</span>
                             </div>
                             <ul className="space-y-2 mb-6">
