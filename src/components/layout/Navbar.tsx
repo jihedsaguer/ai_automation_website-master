@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { navItems } from '../../config/navConfig';
 import { ThemeToggle } from '../ui/theme-toggle';
+import nlsLogo from '../../assets/ChatGPT Image Jul 12, 2025, 03_13_58 PM.png';
 
 const Navbar: React.FC = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
@@ -83,8 +84,9 @@ const Navbar: React.FC = () => {
                             to="/"
                             className="flex items-center space-x-2 text-2xl font-bold"
                         >
-                          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-all duration-300">
-                            <img src="../../../src/assets/bb49bf66-51fb-4f9e-bc88-3623cf8d4c60_removalai_preview.png" alt="Logo" className="w-7 h-7 object-contain" />
+                          {/* Remove the blue background div */}
+                          <div className="flex items-center justify-center transition-all duration-300">
+                            <img src={nlsLogo} alt="NLS Consulting Logo" className="w-7 h-7 object-contain" />
                           </div>
                           <span className="text-primary hover:text-primary/90 transition-all duration-300">NLS Consulting</span>
                         </Link>

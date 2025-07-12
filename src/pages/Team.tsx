@@ -53,29 +53,24 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 
 const teamMembers = [
   {
-    name: "Alice Smith",
-    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Alice",
+    name: "Mohamed Ali Garma",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Mohamed&backgroundColor=2432B0&hair=short03&hairColor=0e0e0e&skinColor=fed7b6&clothingColor=262626&eyes=variant12&mouth=variant26&glasses=variant01",
     accentColor: "#2432B0",
   },
   {
-    name: "Bob Johnson",
-    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Bob",
+    name: "Jihed Saguer",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Jihed&backgroundColor=209FDF&hair=short02&hairColor=0e0e0e&skinColor=fed7b6&clothingColor=262626&eyes=variant09&mouth=variant15",
     accentColor: "#209FDF",
   },
   {
-    name: "Carol Lee",
-    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Carol",
+    name: "Nacef Smadhi",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Nacef&backgroundColor=20D16B&hair=short01&hairColor=0e0e0e&skinColor=fed7b6&clothingColor=262626&eyes=variant10&mouth=variant12",
     accentColor: "#20D16B",
   },
   {
-    name: "David Kim",
-    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=David",
+    name: "Hamouda Jaafar",
+    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Hamouda&backgroundColor=2432B0&hair=short04&hairColor=0e0e0e&skinColor=fed7b6&clothingColor=262626&eyes=variant08&mouth=variant15",
     accentColor: "#2432B0",
-  },
-  {
-    name: "Frank Green",
-    image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Frank",
-    accentColor: "#20D16B",
   },
 ];
 

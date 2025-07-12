@@ -20,10 +20,15 @@ export const About = () => {
               Welcome to <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">NLS Consulting</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Founded in 2023 and headquartered in Bizerte, NLS Consulting is an emerging leader in digital transformation in Tunisia.
-              We combine local expertise with international standards to deliver innovative solutions in cybersecurity,
-              AI automation, and legal advisory. Our team of qualified Tunisian experts works at the intersection of
-              technology and law, serving clients across North Africa and Europe.
+              About NLS Consulting
+Founded in 2025 in Bizerte, NLS Consulting represents a new generation of digital consulting.
+Born at the intersection of strategic vision, cutting-edge technology, and legal expertise, we are more than a startup — we are a fast-growing ecosystem driven by innovation in cybersecurity, AI automation, and legal advisory.
+
+At NLS, we think like a multinational, move like a startup, and carry a bold ambition: to reinvent consulting for the digital era.
+Our team is made up of forward-thinking Tunisian talents — creative, versatile, and disruptive minds — blending local insight with global standards to craft intelligent, secure, and tailor-made solutions.
+
+Our strength? A global vision, local roots, and a relentless drive for the future.
+We support companies, institutions, and startups across North Africa and Europe, with one clear goal: to accelerate their transition into a smarter, more connected, and more secure world.
             </p>
           </motion.div>
         </div>

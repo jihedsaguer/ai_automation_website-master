@@ -70,6 +70,7 @@ export function Footer() {
                     <p>© 2025 Your Company. All rights reserved.</p>
                 </div>
             </div>
+            
         </footer>
     );
 }
